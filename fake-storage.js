@@ -27,10 +27,18 @@
 			index = parseInt(index);
 			// return early if index isn't a number, or is negative
 			if (isNaN(index) || index < 0) { return null; }
-			// get all of the keys
-			var keys = Object.keys(this.__data);
-			// get the key from the index, otherwise return null
-			return (index < keys.length) ? keys[index] : null;
+			// loop through data object until at nth key
+			var i = 0;
+			for (var key in this.__data) {
+				if (this.__data.hasOwnProperty(key)) {
+					if (i === index) {
+						return key;
+					}
+					i++;
+				}
+			}
+			// otherwise return null
+			return null;
 		},
 
 		getItem: function (key) {

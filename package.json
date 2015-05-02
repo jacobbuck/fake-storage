@@ -1,0 +1,21 @@
+{
+  "name": "fake-storage",
+  "version": "1.0.0",
+  "description": "Memory-based storage to shim Web Storage.",
+  "main": "fake-storage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jacobbuck/fake-storage.git"
+  },
+  "keywords": [
+    "storage"
+  ],
+  "author": "Jacob Buck <buck.jacob@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacobbuck/fake-storage/issues"
+  }
+}

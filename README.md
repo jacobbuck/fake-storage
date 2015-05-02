@@ -16,13 +16,10 @@ Then you can you your `myStorage` object much like the [Storage interface](http:
 
 ```js
 myStorage.getItem('foo');
-
 myStorage.setItem('foo', 'bar');
-
 myStorage.removeItem('foo');
-
 myStorage.key(2);
-
+myStorage.clear();
 myStorage.length;
 ```
 
