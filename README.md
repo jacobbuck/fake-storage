@@ -12,7 +12,7 @@ Create a new instance:
 var myStorage = new FakeStorage();
 ```
 
-Then you can you your `myStorage` object much like the [Storage interface](http://www.w3.org/TR/webstorage/#storage):
+Then you can use your `myStorage` object much like the [Storage interface](http://www.w3.org/TR/webstorage/#storage):
 
 ```js
 myStorage.getItem('foo');
