@@ -9,7 +9,7 @@
 		define([], factory);
 	} else if (typeof exports === 'object') {
 		// CommonJS
-		exports.FakeStorage = factory();
+		module.exports = factory();
 	} else {
 		// Browser global
 		root.FakeStorage = factory();
@@ -25,7 +25,7 @@
 		key: function (index) {
 			// sanitise index as int
 			index = parseInt(index);
-			// return early if index isn't a number, or is negative
+			// return early if index isn't a positive number
 			if (isNaN(index) || index < 0) { return null; }
 			// loop through data object until at nth key
 			var i = 0;
@@ -43,24 +43,21 @@
 
 		getItem: function (key) {
 			// only get if there's something to get
-			return (key !== '' && this.__data.hasOwnProperty(key)) ? this.__data[key] : null;
+			return this.__data.hasOwnProperty(key) ? this.__data[key] : null;
 		},
 
 		setItem: function (key, value) {
-			// ensure the key isn't empty
-			if (key !== '') {
-				// if we're adding a new item, incriment the length
-				if (!this.__data.hasOwnProperty(key)) {
-					this.length++;
-				}
-				// always store the value as a string
-				this.__data[key] = value.toString();
+			// if we're adding a new item, incriment the length
+			if (!this.__data.hasOwnProperty(key)) {
+				this.length++;
 			}
+			// always store the value as a string
+			this.__data[key] = value.toString();
 		},
 
 		removeItem: function (key) {
 			// only remove if there's something to remove
-			if (key !== '' && this.__data.hasOwnProperty(key)) {
+			if (this.__data.hasOwnProperty(key)) {
 				delete this.__data[key];
 				this.length--;
 			}
