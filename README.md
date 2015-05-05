@@ -3,8 +3,8 @@ Fake Storage
 
 Memory-based storage to shim [Web Storage](http://www.w3.org/TR/webstorage/).
 
-Documentation
--------------
+Usage
+-----
 
 Create a new instance:
 
@@ -27,6 +27,13 @@ Compatibility
 -------------
 
 There's nothing fancy going on here, so should work everywhere (even IE6).
+
+Tests
+-----
+
+```sh
+npm test
+```
 
 License
 -------

@@ -4,7 +4,7 @@
   "description": "Memory-based storage to shim Web Storage.",
   "main": "fake-storage.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jacobbuck/fake-storage/issues"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.2.4"
   }
 }
