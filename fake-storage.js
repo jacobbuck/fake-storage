@@ -25,12 +25,14 @@
 		key: function (index) {
 			// sanitise index as int
 			index = parseInt(index);
-			// return early if index isn't a positive number
-			if (isNaN(index) || index < 0) { return null; }
+			// return early if index isn't a positive number or larger than length
+			if (isNaN(index) || index < 0 || index >= this.length) {
+				return null;
+			}
 			// loop through data object until at nth key
 			var i = 0;
-			for (var key in this.__data) {
-				if (this.__data.hasOwnProperty(key)) {
+			for (var key in this._data) {
+				if (this._data.hasOwnProperty(key)) {
 					if (i === index) {
 						return key;
 					}
@@ -43,28 +45,28 @@
 
 		getItem: function (key) {
 			// only get if there's something to get
-			return this.__data.hasOwnProperty(key) ? this.__data[key] : null;
+			return this._data.hasOwnProperty(key) ? this._data[key] : null;
 		},
 
 		setItem: function (key, value) {
 			// if we're adding a new item, incriment the length
-			if (!this.__data.hasOwnProperty(key)) {
+			if (!this._data.hasOwnProperty(key)) {
 				this.length++;
 			}
 			// always store the value as a string
-			this.__data[key] = value.toString();
+			this._data[key] = value.toString();
 		},
 
 		removeItem: function (key) {
 			// only remove if there's something to remove
-			if (this.__data.hasOwnProperty(key)) {
-				delete this.__data[key];
+			if (this._data.hasOwnProperty(key)) {
+				delete this._data[key];
 				this.length--;
 			}
 		},
 
 		clear: function () {
-			this.__data = {};
+			this._data = {};
 			this.length = 0;
 		}
 	};

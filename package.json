@@ -1,6 +1,6 @@
 {
   "name": "fake-storage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Memory-based storage to shim Web Storage.",
   "main": "fake-storage.js",
   "scripts": {

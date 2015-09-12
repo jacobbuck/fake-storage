@@ -7,7 +7,9 @@ describe('Fake Storage', function () {
 		it('returns the value associated with a given key', function () {
 			var store = new FakeStorage();
 			store.setItem('foo', 'bar');
+			store.setItem('', 'bar');
 			expect(store.getItem('foo')).to.be('bar');
+			expect(store.getItem('')).to.be('bar');
 		});
 
 		it('returns null if the given key does not exist', function () {
@@ -77,7 +79,7 @@ describe('Fake Storage', function () {
 			store.removeItem('foz');
 			expect(store.getItem('foo')).to.be('bar');
 			expect(store.length).to.be(1);
-		})
+		});
 	});
 
 	describe('clear method', function () {
