@@ -1,15 +1,13 @@
-Fake Storage
-============
+# fake-storage
 
 Memory-based storage to shim [Web Storage](http://www.w3.org/TR/webstorage/).
 
-Usage
------
+## Usage
 
 Create a new instance:
 
 ```js
-var myStorage = new FakeStorage();
+const myStorage = new FakeStorage();
 ```
 
 Then you can use your `myStorage` object much like the [Storage interface](http://www.w3.org/TR/webstorage/#storage):
@@ -23,19 +21,6 @@ myStorage.clear();
 myStorage.length;
 ```
 
-Compatibility
--------------
-
-There's nothing fancy going on here, so should work everywhere (even IE6).
-
-Tests
------
-
-```sh
-npm test
-```
-
-License
--------
+## License
 
 MIT - see [LICENSE](LICENSE)
