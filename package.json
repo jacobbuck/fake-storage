@@ -4,7 +4,7 @@
   "description": "Memory-based storage to shim Web Storage.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
