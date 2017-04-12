@@ -2,7 +2,7 @@
   "name": "fake-storage",
   "version": "1.0.3",
   "description": "Memory-based storage to shim Web Storage.",
-  "main": "fake-storage.js",
+  "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
