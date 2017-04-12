@@ -19,7 +19,7 @@
     "url": "https://github.com/jacobbuck/fake-storage/issues"
   },
   "devDependencies": {
-    "expect.js": "^0.3.1",
+    "expect": "^1.20.2",
     "mocha": "^2.2.4"
   }
 }
