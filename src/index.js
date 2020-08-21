@@ -3,7 +3,7 @@ function FakeStorage() {
 }
 
 FakeStorage.prototype = {
-  key: function (index) {
+  key(index) {
     // sanitise index as int
     index = parseInt(index);
     // return early if index isn't a positive number or larger than length
@@ -11,8 +11,8 @@ FakeStorage.prototype = {
       return null;
     }
     // loop through data object until at nth key
-    var i = 0;
-    for (var key in this._data) {
+    let i = 0;
+    for (const key in this._data) {
       if (this._data.hasOwnProperty(key)) {
         if (i === index) {
           return key;
@@ -24,13 +24,13 @@ FakeStorage.prototype = {
     return null;
   },
 
-  getItem: function (key) {
+  getItem(key) {
     // only get if there's something to get
     return this._data.hasOwnProperty(key) ? this._data[key] : null;
   },
 
-  setItem: function (key, value) {
-    // if we're adding a new item, incriment the length
+  setItem(key, value) {
+    // if we're adding a new item, increment the length
     if (!this._data.hasOwnProperty(key)) {
       this.length++;
     }
@@ -38,7 +38,7 @@ FakeStorage.prototype = {
     this._data[key] = value.toString();
   },
 
-  removeItem: function (key) {
+  removeItem(key) {
     // only remove if there's something to remove
     if (this._data.hasOwnProperty(key)) {
       delete this._data[key];
@@ -46,7 +46,7 @@ FakeStorage.prototype = {
     }
   },
 
-  clear: function () {
+  clear() {
     this._data = {};
     this.length = 0;
   },

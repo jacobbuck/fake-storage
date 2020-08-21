@@ -1,10 +1,10 @@
-var expect = require('expect');
-var FakeStorage = require('.');
+const expect = require('expect');
+const FakeStorage = require('.');
 
 describe('Fake Storage', function () {
   describe('getItem method', function () {
     it('returns the value associated with a given key', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       store.setItem('foo', 'bar');
       store.setItem('', 'bar');
       expect(store.getItem('foo')).toBe('bar');
@@ -12,21 +12,21 @@ describe('Fake Storage', function () {
     });
 
     it('returns null if the given key does not exist', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       expect(store.getItem('foz')).toBe(null);
     });
   });
 
   describe('setItem method', function () {
     it('stores a new key/value pair', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       expect(store.getItem('foo')).toBe(null);
       store.setItem('foo', 'bar');
       expect(store.getItem('foo')).toBe('bar');
     });
 
     it('stores the value as a string', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       store.setItem('number', 2);
       expect(store.getItem('number')).toBe('2');
       store.setItem('boolean', true);
@@ -38,7 +38,7 @@ describe('Fake Storage', function () {
     });
 
     it('updates the value of an existing key', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       store.setItem('foo', 'bar');
       expect(store.getItem('foo')).toBe('bar');
       store.setItem('foo', 'baz');
@@ -46,7 +46,7 @@ describe('Fake Storage', function () {
     });
 
     it('increases the length attribute when storing a new key/value pair', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       expect(store.length).toBe(0);
       store.setItem('foo', 'bar');
       expect(store.length).toBe(1);
@@ -59,21 +59,21 @@ describe('Fake Storage', function () {
 
   describe('removeItem method', function () {
     it('removes a key/value pair with a given key', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       store.setItem('foo', 'bar');
       store.removeItem('foo');
       expect(store.getItem('foo')).toBe(null);
     });
 
     it('decreases the length attribute', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       store.setItem('foo', 'bar');
       store.removeItem('foo');
       expect(store.length).toBe(0);
     });
 
     it('does nothing if the given key does not exist', function () {
-      var store = new FakeStorage();
+      const store = new FakeStorage();
       store.setItem('foo', 'bar');
       store.removeItem('foz');
       expect(store.getItem('foo')).toBe('bar');
@@ -82,7 +82,7 @@ describe('Fake Storage', function () {
   });
 
   describe('clear method', function () {
-    var store = new FakeStorage();
+    const store = new FakeStorage();
     store.setItem('bar', 'foo');
     store.setItem('foo', 'bar');
     store.clear();
@@ -98,7 +98,7 @@ describe('Fake Storage', function () {
   });
 
   describe('key method', function () {
-    var store = new FakeStorage();
+    const store = new FakeStorage();
     store.setItem('foo', 'hey');
     store.setItem('bar', 'ho!');
 
