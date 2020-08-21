@@ -5,6 +5,7 @@
 ### Added
 
 - Added [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) for Babel helpers.
+- Set `"sideEffects": false` in [package.json](./package.json).
 
 ### Changed
 
