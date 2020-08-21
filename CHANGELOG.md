@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Refactored internals in modern JavaScript.
+- Updated `length` property to a getter.
+
+### Removed
+
+- **BREAKING** Removed support for Internet Explorer 10 and earlier.
+
 ## 1.2.0 - 2020-08-21
 
 ### Added
