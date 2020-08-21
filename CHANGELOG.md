@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Added ES Module build.
+
+### Changed
+
+- Builds are now done with [Rollup](http://rollupjs.org).
+
 ## 1.1.0 - 2017-04-12
 
 ### Changed

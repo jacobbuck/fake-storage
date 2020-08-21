@@ -2,8 +2,14 @@
   "name": "fake-storage",
   "version": "1.1.0",
   "description": "Memory-based storage to shim Web Storage.",
-  "main": "index.js",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build",
     "test": "mocha"
   },
   "repository": {
@@ -19,7 +25,11 @@
     "url": "https://github.com/jacobbuck/fake-storage/issues"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-babel": "^5.2.0",
     "expect": "^1.20.2",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "rollup": "^2.26.4"
   }
 }
