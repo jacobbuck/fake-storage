@@ -1,9 +1,9 @@
-function FakeStorage () {
+function FakeStorage() {
   this.clear();
 }
 
 FakeStorage.prototype = {
-  key: function(index) {
+  key: function (index) {
     // sanitise index as int
     index = parseInt(index);
     // return early if index isn't a positive number or larger than length
@@ -24,12 +24,12 @@ FakeStorage.prototype = {
     return null;
   },
 
-  getItem: function(key) {
+  getItem: function (key) {
     // only get if there's something to get
     return this._data.hasOwnProperty(key) ? this._data[key] : null;
   },
 
-  setItem: function(key, value) {
+  setItem: function (key, value) {
     // if we're adding a new item, incriment the length
     if (!this._data.hasOwnProperty(key)) {
       this.length++;
@@ -38,7 +38,7 @@ FakeStorage.prototype = {
     this._data[key] = value.toString();
   },
 
-  removeItem: function(key) {
+  removeItem: function (key) {
     // only remove if there's something to remove
     if (this._data.hasOwnProperty(key)) {
       delete this._data[key];
@@ -46,10 +46,10 @@ FakeStorage.prototype = {
     }
   },
 
-  clear: function() {
+  clear: function () {
     this._data = {};
     this.length = 0;
-  }
+  },
 };
 
 export default FakeStorage;
