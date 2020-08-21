@@ -1,55 +1,37 @@
-function FakeStorage() {
-  this.clear();
-}
+class FakeStorage {
+  #data = {};
 
-FakeStorage.prototype = {
-  key(index) {
-    // sanitise index as int
-    index = parseInt(index);
-    // return early if index isn't a positive number or larger than length
-    if (isNaN(index) || index < 0 || index >= this.length) {
-      return null;
-    }
-    // loop through data object until at nth key
-    let i = 0;
-    for (const key in this._data) {
-      if (this._data.hasOwnProperty(key)) {
-        if (i === index) {
-          return key;
-        }
-        i++;
-      }
-    }
-    // otherwise return null
-    return null;
-  },
+  get length() {
+    return Object.keys(this.#data).length;
+  }
+
+  key(n) {
+    return Object.keys(this.#data)[Number.parseInt(n, 10)] ?? null;
+  }
 
   getItem(key) {
-    // only get if there's something to get
-    return this._data.hasOwnProperty(key) ? this._data[key] : null;
-  },
+    const _data = this.#data;
+    const _key = `${key}`;
+    return Object.prototype.hasOwnProperty.call(_data, _key)
+      ? _data[_key]
+      : null;
+  }
 
   setItem(key, value) {
-    // if we're adding a new item, increment the length
-    if (!this._data.hasOwnProperty(key)) {
-      this.length++;
-    }
-    // always store the value as a string
-    this._data[key] = value.toString();
-  },
+    return (this.#data[`${key}`] = `${value}`);
+  }
 
-  removeItem(key) {
-    // only remove if there's something to remove
-    if (this._data.hasOwnProperty(key)) {
-      delete this._data[key];
-      this.length--;
+  removeItem(key, value) {
+    const _data = this.#data;
+    const _key = `${key}`;
+    if (Object.prototype.hasOwnProperty.call(_data, _key)) {
+      delete _data[_key];
     }
-  },
+  }
 
-  clear() {
-    this._data = {};
-    this.length = 0;
-  },
-};
+  clear(key, value) {
+    this.#data = {};
+  }
+}
 
 export default FakeStorage;
