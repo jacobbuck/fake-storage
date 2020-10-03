@@ -16,7 +16,7 @@ class FakeStorage {
   }
 
   setItem(key, value) {
-    return (this.#data[`${key}`] = `${value}`);
+    this.#data[`${key}`] = `${value}`;
   }
 
   removeItem(key, value) {
