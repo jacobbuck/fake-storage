@@ -12,9 +12,7 @@ class FakeStorage {
   getItem(key) {
     const _data = this.#data;
     const _key = `${key}`;
-    return Object.prototype.hasOwnProperty.call(_data, _key)
-      ? _data[_key]
-      : null;
+    return _data.hasOwnProperty(_key) ? _data[_key] : null;
   }
 
   setItem(key, value) {
@@ -24,7 +22,7 @@ class FakeStorage {
   removeItem(key, value) {
     const _data = this.#data;
     const _key = `${key}`;
-    if (Object.prototype.hasOwnProperty.call(_data, _key)) {
+    if (_data.hasOwnProperty(_key)) {
       delete _data[_key];
     }
   }
