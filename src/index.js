@@ -1,34 +1,39 @@
 class FakeStorage {
-  #data = {};
+  #data = new Map();
 
   get length() {
-    return Object.keys(this.#data).length;
+    return this.#data.size;
   }
 
   key(n) {
-    return Object.keys(this.#data)[Number.parseInt(n, 10)] ?? null;
+    n = Number.parseInt(n, 10);
+    const iterator = this.#data.keys();
+    let i = 0;
+    let result = iterator.next();
+    while (!result.done) {
+      if (i === n) {
+        return result.value;
+      }
+      i += 1;
+      result = iterator.next();
+    }
+    return null;
   }
 
   getItem(key) {
-    const _data = this.#data;
-    const _key = `${key}`;
-    return _data.hasOwnProperty(_key) ? _data[_key] : null;
+    return this.#data.get(`${key}`) ?? null;
   }
 
   setItem(key, value) {
-    this.#data[`${key}`] = `${value}`;
+    this.#data.set(`${key}`, `${value}`);
   }
 
-  removeItem(key, value) {
-    const _data = this.#data;
-    const _key = `${key}`;
-    if (_data.hasOwnProperty(_key)) {
-      delete _data[_key];
-    }
+  removeItem(key) {
+    this.#data.delete(`${key}`);
   }
 
-  clear(key, value) {
-    this.#data = {};
+  clear() {
+    this.#data.clear();
   }
 }
 
