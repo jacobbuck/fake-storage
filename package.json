@@ -28,7 +28,7 @@
     "url": "https://github.com/jacobbuck/fake-storage/issues"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.2"
+    "@babel/runtime": "^7.12.5"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
