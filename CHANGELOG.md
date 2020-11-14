@@ -4,7 +4,9 @@
 
 ### Changed
 
+- Bumped up version of [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) to v7.12.5.
 - Enabled loose mode on '@babel/preset-env' to reduce build output.
+- Updated devDependencies.
 - Updated internal storage mechanism.
 
 ## 2.0.0 - 2020-08-21
