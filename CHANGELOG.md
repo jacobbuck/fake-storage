@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+- Added source maps to build output.
+
 ### Changed
 
 - Bumped up version of [@babel/runtime](https://www.npmjs.com/package/@babel/runtime) to v7.12.5.
